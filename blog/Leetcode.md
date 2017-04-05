@@ -4,7 +4,7 @@
 
 > 对于一些解法不高效的题，欢迎留言写下你的答案。
 
-> 最后编辑时间： 3/4/2017
+> 最后编辑时间： 5/4/2017
 
 <h5><a id="problem1" href="https://leetcode.com/problems/two-sum/#/description">1.Two Sum </a> (96%) </h5>
 
@@ -374,6 +374,33 @@ var fourSum = function(nums, target) {
   };
 ```
 这道题的解法也是跟随了3sum的解法，建议上面3题一起看。
+
+##### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description)(33%）
+```javascript
+  var removeDuplicates = function(nums) {
+    for(var i=0;i<nums.length;i++){
+        if(nums[i]==nums[i+1]){
+            nums.splice(i,1);
+            i--;
+        }
+    }
+  };
+```
+
+##### [27. Remove Element](https://leetcode.com/problems/remove-element/#/description) (87%)
+```javascript
+  var removeElement = function(nums, target) {
+    for(var i=0;i<nums.length;i++){
+        if(nums[i]==target){
+            nums[i]=nums[0];
+            nums.shift();
+            i--;
+        }
+    }
+  };
+```
+这里我没用splice，因为效率很低。这里当发现有一个数字和target相同时,直接把第一个数字的值覆盖这个与target相同的值，然后将第一个数字删掉。
+
 
 ## 链接
 * [Leetcode算法题](https://leetcode.com/problemset/algorithms/)

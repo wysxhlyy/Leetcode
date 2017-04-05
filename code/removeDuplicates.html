@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>26. Remove Duplicates from Sorted Array</title>
+  </head>
+  <body>
+    <script>
+    var removeDuplicates = function(nums) {
+      for(var i=0;i<nums.length;i++){
+          if(nums[i]==nums[i+1]){
+              nums.splice(i,1);
+              i--;
+          }
+      }
+    };
+
+    console.log(removeDuplicates([1,1,2]));
+    </script>
+
+
+  </body>
+</html>
