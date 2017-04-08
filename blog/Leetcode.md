@@ -4,7 +4,7 @@
 
 > 对于一些解法不高效的题，欢迎留言写下你的答案。
 
-> 最后编辑时间： 5/4/2017
+> 最后编辑时间： 7/4/2017
 
 <h5><a id="problem1" href="https://leetcode.com/problems/two-sum/#/description">1.Two Sum </a> (96%) </h5>
 
@@ -400,6 +400,28 @@ var fourSum = function(nums, target) {
   };
 ```
 这里我没用splice，因为效率很低。这里当发现有一个数字和target相同时,直接把第一个数字的值覆盖这个与target相同的值，然后将第一个数字删掉。
+
+##### [34. Search for a Range](https://leetcode.com/problems/search-for-a-range/#/description) (61%)
+```javascript
+var searchRange = function(nums, target) {
+    var left=0;
+    var right=nums.length-1;
+    var i=-1;
+    var j=-1;
+
+    while(left<=right&&(i==-1||j==-1)){
+        nums[left]==target?i=left:left++;
+        if(i!=-1){
+            j=i+1;
+            while(nums[j]==target){
+                j++;
+            }
+        }
+    }
+    return j==-1?[i,j]:[i,j-1];
+};
+```
+因为已经排了序，找到左边那个以后就直接从左边的位置往后找就能找到右边的target的位置了。理论上用二叉树做更快，但不知道为什么，用二叉树试了几次都超时了，如果有网友能有js的二叉树解法，欢迎留言。
 
 
 ## 链接
